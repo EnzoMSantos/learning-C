@@ -16,12 +16,24 @@ int main() {
 
     printf("seu chute: %d\n", chute);
 
-    if(chute == secretNumber){
+    int acertou = (chute == secretNumber);
+
+    if(acertou){
     printf("Voce acertou, Parabens\n"); 
     }
     else {
         printf("Voce errou!\n");
-        printf("Tente de novo!");
+
+        int maior = chute > secretNumber;
+        if(maior){
+            printf("Seu chute foi maior que seu numero secreto.\n");
+        }
+        else {
+            printf("Seu chute foi menor que seu numero secreto.\n");
+        }
+        
+        
+        printf("Tente de novo!\n");
     }
 
    
