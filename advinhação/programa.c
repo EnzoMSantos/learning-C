@@ -11,31 +11,36 @@ int main() {
 
     int chute;
 
-    printf("Qual o seu chute?");
-    scanf("%d", &chute);
+    for(int i = 1; i <= 3; i++){
 
-    printf("seu chute: %d\n", chute);
+        printf("Tentativa %d de 3\n", i);
+        printf("Qual o seu chute? ");    
+        scanf("%d", &chute);
 
-    int acertou = (chute == secretNumber);
+        printf("seu chute: %d\n", chute);
 
-    if(acertou){
-    printf("Voce acertou, Parabens\n"); 
-    }
-    else {
-        printf("Voce errou!\n");
+        int acertou = (chute == secretNumber);
 
-        int maior = chute > secretNumber;
-        if(maior){
-            printf("Seu chute foi maior que seu numero secreto.\n");
+        if(acertou){
+            printf("Voce acertou, Parabens\n"); 
         }
         else {
-            printf("Seu chute foi menor que seu numero secreto.\n");
-        }
-        
-        
-        printf("Tente de novo!\n");
-    }
+            printf("Voce errou!\n");
 
+            int maior = chute > secretNumber;
+            if(maior){
+                printf("Seu chute foi maior que seu numero secreto.\n");
+            }
+            else {
+                printf("Seu chute foi menor que seu numero secreto.\n");
+            }
+            
+            
+            printf("Tente de novo!\n");
+        }
+    }
+    
+    printf("Fim de Jogo!");
    
 
 }
