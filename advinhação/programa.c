@@ -28,16 +28,20 @@ int main() {
     printf("Escolha : ");
     scanf("%d", &nivel);
 
-    if(nivel == 1) {
+    switch (nivel) {
+    case 1:
         numeroTentativas = 20;
-    }
-    else if (nivel == 2)
-    {
-        numeroTentativas = 10;
-    } else {
-        numeroTentativas = 6;
-    }
+        break;
     
+    case 2: 
+        numeroTentativas = 12;
+        break;
+
+    default:
+        numeroTentativas = 6;
+        break;
+        
+    }  
 
     for(int i = 1; i <= numeroTentativas; i++) {
 
