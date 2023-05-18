@@ -19,9 +19,27 @@ int main() {
     int tentativas = 1;
     double pontos = 1000;
 
+    int numeroTentativas = 5;
+    int acertou = 0;
 
+    int nivel;
+    printf("Qual o nivel de dificuldade?\n");
+    printf("(1) Facil (2) Medio (3) Dificil\n\n");
+    printf("Escolha : ");
+    scanf("%d", &nivel);
 
-    while(1){
+    if(nivel == 1) {
+        numeroTentativas = 20;
+    }
+    else if (nivel == 2)
+    {
+        numeroTentativas = 10;
+    } else {
+        numeroTentativas = 6;
+    }
+    
+
+    for(int i = 1; i <= numeroTentativas; i++) {
 
         printf("Tentativa %d\n", tentativas);
         printf("Qual o seu chute? ");    
@@ -34,12 +52,11 @@ int main() {
             continue;
         }
 
-        int acertou = (chute == secretNumber);
+        acertou = (chute == secretNumber);
         int maior = chute > secretNumber;
         
         if(acertou) {
-            printf("Parabens! Voce acertou!\n");
-            printf("Jogue de novo, voce e um bom jogador!\n");
+           
 
             break;
         }
@@ -57,8 +74,19 @@ int main() {
         pontos = pontos - pontosPerdidos;
     }
 
-    printf("Fim de Jogo!\n"); 
-    printf("Voce acertou em %d tentativas!\n", tentativas);
-    printf("Total de pontos: %.1f\n", pontos);
+     printf("Fim de Jogo!\n");
+
+    if(acertou) {
+           
+        printf("Voce acertou em %d tentativas!\n", tentativas);
+        printf("Total de pontos: %.1f\n", pontos);
+            
+    } else {
+        printf("Voce perdeu! Tente de novo!\n");
+    }
+
+
+    
+   
      
 }
